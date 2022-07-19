@@ -1,8 +1,12 @@
 <template>
     <div class = "can-catalog-item">
-        <p>Item 1</p>
-        <p>Price: 1500</p>
-        <button>Add to cart</button>
+        <img class = "can-catalog-item__image" :src=" require ('../assets/img/' + product_data.image)" alt="img"> 
+
+        <p class = "can-catalog-item__name">{{product_data.name}}</p>
+        <p class = "can-catalog-item__price">{{product_data.price}} руб.</p>
+
+        <button class = "can-catalog-item__add_to_card_btn btn" 
+        @click="sendDataToParent">Add to cart</button>  <!-- вызываем функция по нажатию кнопки -->
     </div>
 </template>
 
@@ -14,11 +18,27 @@ export default {
     components: {
 
     },
-    props: {},
+    props: { // то что получает компонент сверху, то есть от родительского компонента
+        product_data: 
+        {
+            type: Object,
+            default() 
+            {
+                return {}
+            }
+        }
+    },
     data() {
         return {}
     },
-    computed: {}
+    computed: {},
+    methods: 
+    {
+        sendDataToParent() // функция для передачи наименования родительскому элементу с дочернего
+        {
+            this.$emit( 'sendName', this.product_data.name)
+        }
+    }
     
 }
  
@@ -29,11 +49,28 @@ export default {
 
 .can-catalog-item
 {
-    flex-basis: 25%;
-    box-shadow: 0 0  8px 0 #9c9c9c;
-    padding: $padding * 2;
-    margin-bottom: $margin*2;
+    box-shadow: 0 0 8px 0 #e0e0e0;
+    width: 158px;
+    height: 280px;
+    margin: 8px;
+    border-radius: 5px;
+    background-color: aliceblue;
+
+
+    // margin: 20px 0 0 0;
+    // flex-basis: 25%;
+    // box-shadow: 0 0  8px 0 #9c9c9c;
+    // padding: $padding * 2;
+    // margin-bottom: $margin*2;
 }
+
+.can-catalog-item__image
+{
+    margin: 15px;
+    width: 115px;
+}
+
+
 button
 {
     margin-top: $margin;

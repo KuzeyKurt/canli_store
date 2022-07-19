@@ -7,6 +7,8 @@
         <can-catalog-item-vue 
             v-for="product in products"
             :key="product.name"
+            v-bind:product_data="product"
+            @sendName="showChildNameConsole"
         />
     </div>
 </template>
@@ -18,38 +20,44 @@ export default {
     name: "can-catalog",
     components: {
         canCatalogItemVue
-    },
+    },   
     props: {},
     data() {
         return { 
             "products": [
         {
-            "image": "1.jpg",
-            "name": "picture",
+            "image": "joker.jpg",
+            "name": "Picture",
             "price": "500",
             "available": true
         },
         {
-            "image": "2.jpg",
-            "name": "dress",
+            "image": "shvarc.jpg",
+            "name": "Dress",
             "price": "2500",
             "available": true
         },
         {
-            "image": "3.jpg",
+            "image": "cage.jpg",
             "name": "Сanli qurabie",
             "price": "200",
             "available": false
         },
         {
-            "image": "4.jpg",
+            "image": "cat1.jpg",
             "name": "shoper",
             "price": "1500",
             "available": true
         },
         {
-            "image": "5.jpg",
+            "image": "chan.jpg",
             "name": "T-shirt",
+            "price": "2000",
+            "available": true
+        },
+        {
+            "image": "stat.jpg",
+            "name": "Blue T-shirt",
             "price": "2000",
             "available": true
         }
@@ -57,7 +65,13 @@ export default {
 
         }
     },
-    computed: {}
+    computed: {},
+    methods: 
+    {
+        showChildNameConsole(data) { // функция для получения имени товара с дочернего компонента и отображения в консоли
+            console.log(data) // выводит аргумент в консоль
+        }
+    }
     
 }
  
