@@ -1,15 +1,17 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id = "app">
+    <p>Hello Canli!</p>
+    <canMainWrapper />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import canMainWrapper from './components/can-main-wrapper.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  components: { 
+    canMainWrapper
   }
 }
 </script>
