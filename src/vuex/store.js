@@ -1,55 +1,38 @@
+import axios from 'axios';
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-Vue.use(Vuex);
+Vue.use(Vuex); // вью использует вьюэкс
 
-let store = new Vuex.Store (  {
-    state: {},
-    mutations: {},
-    actions: {},
-    getters: {}
+let store = new Vuex.Store (  { // создание хранилища - объект вьюэкс стор
+    state: { // state - хранение данных
+        products: []
+    },
+    mutations: { // мутации - смена состояний, они синхронны
+        SET_PRODUCTS_TO_STATE: (state, products) => {
+            state.products = products;
+        }
+    },
+    actions: {  // действия - асинхронныы
+        GET_PRODUCTS_FROM_API({commit}){
+            return axios ('http://localhost:3000/products', {
+                method: "GET"
+            })
+            .then((products) => {
+                commit('SET_PRODUCTS_TO_STATE', products.data);
+                return products;
+            })
+            .catch((error) => {
+                console.log(error)
+                return error;
+            })
+        }
+    },
+    getters: { // короткий путь до получения данных в state
+        PRODUCTS(state){
+            return state.products;
+        }
+    }
 });
 
-export default store;
-
-// import { createApp } from 'vue'
-// import { createStore } from 'vuex'
-// import canMainWrapper from "../components/can-main-wrapper.vue";
-
-// // Create a new store instance.
-// const store = createStore({
-//   state () { },
-//   mutations: {},
-//   actions: {},
-//   getters: {}
-//   })
-
-// const app = createApp({ canMainWrapper })
-
-// // Install the store instance as a plugin
-// app.use(store)
-// export default store;
-
-// import Vue from 'vue'
-// import Vuex from 'vuex'
-// Vue.use(Vuex)
-
-// export default new Vuex.Store({
-//     state:{
-//      // Current state of the application lies here.
-//     },
-//     getters:{
-//      // Compute derived state based on the current state. More like computed property.
-//     },
-//     mutations:{
-//      // Mutate the current state
-//     },
-//     actions:{
-//      // Get data from server and send that to mutations to mutate the current state
-//     }
-//    })
-//    // You can assign a store to variable and export 
-//     export const store = new Vuex.Store({})
-//    // Import the store
-//    import { storem } from '../main'
-//    storem
+export default store; // для экспорта
