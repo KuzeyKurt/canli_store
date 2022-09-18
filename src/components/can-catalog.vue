@@ -8,7 +8,7 @@
             v-for="product in PRODUCTS"
             :key="product.name"
             v-bind:product_data="product"
-            @sendName="showChildNameConsole"
+            @sendDataToParent="showChildNameConsole"
         />
     </div> </div>
 </template>
@@ -16,6 +16,8 @@
 <script>
 import canCatalogItemVue from './can-catalog-item.vue'
 import { mapActions, mapGetters } from "vuex";
+// import { response } from 'express';
+//import { response } from 'express';
 // import { response } from 'express';
 
 // import json from '../../db.json'
@@ -35,7 +37,7 @@ export default {
     computed: {
         ...mapGetters ([
             'PRODUCTS'
-        ])
+        ]),
     },
     methods: 
     {
@@ -48,13 +50,14 @@ export default {
     },
     mounted() {
         this.GET_PRODUCTS_FROM_API()
-        // {
-        //     .then((response) => {
-        //         if (response.data) {
-        //             console.log('Data arrived!')
-        //         }
-        //     })
-        // }
+        .then((response) => {
+            if (response.data)
+            {
+                console.log('Data arrived')
+            }
+        })
+        
+        
     }
     
 }
