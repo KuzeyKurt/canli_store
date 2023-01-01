@@ -8,7 +8,7 @@
             v-for="product in PRODUCTS"
             :key="product.name"
             v-bind:product_data="product"
-            @sendDataToParent="showChildNameConsole"
+            @addToCart="addToCart"
         />
     </div> </div>
 </template>
@@ -20,7 +20,7 @@ import { mapActions, mapGetters } from "vuex";
 //import { response } from 'express';
 // import { response } from 'express';
 
-// import json from '../../db.json'
+ // import json from '../../db.json'
 
 export default {
     name: "can-catalog",
@@ -44,7 +44,7 @@ export default {
         ...mapActions([
             'GET_PRODUCTS_FROM_API'
             ]),
-        showChildNameConsole(data) { // функция для получения имени товара с дочернего компонента и отображения в консоли
+        addToCart(data) { // функция для получения имени товара с дочернего компонента и отображения в консоли
             console.log(data) // выводит аргумент в консоль
         }
     },

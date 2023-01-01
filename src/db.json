@@ -1,34 +1,46 @@
-{
-    "products": [
-        {
-            "image": "1.jpg",
-            "name": "picture",
-            "price": "500",
-            "available": true
-        },
-        {
-            "image": "2.jpg",
-            "name": "dress",
-            "price": "2500",
-            "available": true
-        },
-        {
-            "image": "3.jpg",
-            "name": "Сanli qurabie",
-            "price": "200",
-            "available": false
-        },
-        {
-            "image": "4.jpg",
-            "name": "shoper",
-            "price": "1500",
-            "available": true
-        },
-        {
-            "image": "5.jpg",
-            "name": "T-shirt",
-            "price": "2000",
-            "available": true
-        }
-    ]
-}
+// {
+//     "products": [
+//         {
+//             "image": "img/1.jpg",
+//             "name": "picture",
+//             "price": "500",
+//             "available": true
+//         },
+//         {
+//             "image": "img/2.jpg",
+//             "name": "dress",
+//             "price": "2500",
+//             "available": true
+//         },
+//         {
+//             "image": "3.jpg",
+//             "name": "Сanli qurabie",
+//             "price": "200",
+//             "available": false
+//         },
+//         {
+//             "image": "4.jpg",
+//             "name": "shoper",
+//             "price": "1500",
+//             "available": true
+//         },
+//         {
+//             "image": "5.jpg",
+//             "name": "T-shirt",
+//             "price": "2000",
+//             "available": true
+//         },
+//         {
+//             "image": "6.jpg",
+//             "name": "FEЗA",
+//             "price": "5000",
+//             "available": true
+//         },
+//         {
+//             "image": "6.jpg",
+//             "name": "FEЗA",
+//             "price": "5000",
+//             "available": true
+//         }
+//     ]
+// }

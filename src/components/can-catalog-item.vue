@@ -4,9 +4,10 @@
 
         <p class = "can-catalog-item__name">{{product_data.name}}</p>
         <p class = "can-catalog-item__price">{{product_data.price}} руб.</p>
+        
 
         <button class = "can-catalog-item__add_to_card_btn btn" 
-        @click="sendDataToParent">Add to cart</button>  <!-- вызываем функция по нажатию кнопки -->
+        @click="addToCart">Add to cart</button>  <!-- вызываем функция по нажатию кнопки -->
     </div>
 </template>
 
@@ -34,10 +35,15 @@ export default {
     computed: {},
     methods: 
     {
-        sendDataToParent() // функция для передачи наименования родительскому элементу с дочернего
+        addToCart()
+        {
+            this.$emit('addToCart', this.product_data)
+        }
+
+        /* sendDataToParent() // функция для передачи наименования родительскому элементу с дочернего
         {
             this.$emit( 'sendName', this.product_data.name)
-        }
+        } */ 
     }
     
 }
@@ -52,7 +58,7 @@ export default {
     box-shadow: 0 0 8px 0 #e0e0e0;
     width: 158px;
     height: 280px;
-    margin: 8px;
+    margin: 10px;
     border-radius: 5px;
     background-color: aliceblue;
 
@@ -68,12 +74,21 @@ export default {
 {
     margin: 15px;
     width: 115px;
+    border-radius: 15px;
 }
 
 
 button
 {
+    background-color: aquamarine;
+    box-shadow: 0 0 8px 0 #e0e0e0;
+    border-color: #e0e0e0;
+    border-radius: 10px;
     margin-top: $margin;
 }
+
+// @media screen (max-width: 400px) {
+    
+// }
 
 </style>

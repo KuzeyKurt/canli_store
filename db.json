@@ -29,6 +29,36 @@
           "name": "T-shirt",
           "price": "2000",
           "available": true
-      }
+      },
+      {
+        "image": "6.jpg",
+        "name": "FEЗA",
+        "price": "5000",
+        "available": true
+    },
+    {
+        "image": "6.jpg",
+        "name": "FEЗБ",
+        "price": "5000",
+        "available": true
+    },
+    {
+        "image": "6.jpg",
+        "name": "FEЗD",
+        "price": "5000",
+        "available": true
+    },
+    {
+        "image": "6.jpg",
+        "name": "FEЗE",
+        "price": "5000",
+        "available": true
+    },
+    {
+        "image": "6.jpg",
+        "name": "FEЗI",
+        "price": "5000",
+        "available": true
+    }
   ]
 }
