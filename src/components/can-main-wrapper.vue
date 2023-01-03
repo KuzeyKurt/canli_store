@@ -2,7 +2,11 @@
     <div class="can-main=wrapper">
         <p>{{title}}</p>
         <can-catalog-vue />
-        <can-cart-vue v-if = "CART.length"/>
+        <can-cart-vue 
+            v-if = "CART.length"
+            :cart_data="CART"
+        
+        />
     </div>
 </template>
 
@@ -39,6 +43,7 @@ export default {
 <style scoped>
  .can-main-wrapper
  {
+    
     max-width: 900px;
     margin: 0 auto;
  }

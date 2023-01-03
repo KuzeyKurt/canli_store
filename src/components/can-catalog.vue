@@ -42,10 +42,11 @@ export default {
     methods: 
     {
         ...mapActions([
-            'GET_PRODUCTS_FROM_API'
+            'GET_PRODUCTS_FROM_API',
+            'ADD_TO_CART'
             ]),
         addToCart(data) { // функция для получения имени товара с дочернего компонента и отображения в консоли
-            console.log(data) // выводит аргумент в консоль
+            this.ADD_TO_CART(data) // выводит аргумент в консоль
         }
     },
     mounted() {
@@ -69,6 +70,7 @@ export default {
 
 .can-catalog
 {
+
     &__list
     {
         display: flex;
