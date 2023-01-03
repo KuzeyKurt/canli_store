@@ -16,7 +16,24 @@ let store = new Vuex.Store (  { // создание хранилища - объ�
         },
         SET_CART:(state, product) =>
         {
-            state.cart.push(product)
+            if (state.cart.length)
+            {
+                let isProductExists = false;
+                state.cart.map(function (item) 
+                {
+                    if (item.name === product.name)
+                    {
+                        isProductExists = true;
+                        item.quantity++;
+                    }
+                })
+                if (!isProductExists)
+                {
+                    state.cart.push(product)
+                }
+            } else {
+                state.cart.push(product)
+            }
         },
         REMOVE_FROM_CART:(state, index) =>
         {
