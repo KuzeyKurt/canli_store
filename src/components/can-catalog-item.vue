@@ -7,7 +7,7 @@
         
 
         <button class = "can-catalog-item__add_to_card_btn btn" 
-        @click="addToCart">Add to cart</button>  <!-- вызываем функция по нажатию кнопки -->
+        @click="addToCart">Add to cart</button>  <!-- вызываем функцию по нажатию кнопки -->
     </div>
 </template>
 

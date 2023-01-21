@@ -1,5 +1,10 @@
 <template>
     <div class = "can-catalog">
+
+        <router-link :to="{name: 'cart', params: {cart_data: CART}}">
+            <div class="can-catalog__link_to_cart">CART: {{ CART.length }}</div>
+        </router-link>
+        
         <h1>Catalog</h1>
     
 
@@ -36,7 +41,8 @@ export default {
     },
     computed: {
         ...mapGetters ([
-            'PRODUCTS'
+            'PRODUCTS',
+            'CART'
         ]),
     },
     methods: 
@@ -77,7 +83,16 @@ export default {
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
-    }    
+    }  
+    
+    &__link_to_cart
+    {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: $padding*2;
+        border: solid;
+    }
 }
 
 </style>

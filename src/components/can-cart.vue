@@ -1,5 +1,8 @@
 <template>
   <div class = "can-cart">
+    <router-link :to="{name: 'catalog'}">
+      <div class="can-catalog__link_to_cart">Back to catalog</div>
+    </router-link>
     <h1>Cart</h1>
     <can-cart-item-vue
     v-for="(item, index) in cart_data"
