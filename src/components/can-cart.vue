@@ -4,6 +4,7 @@
       <div class="can-catalog__link_to_cart">Back to catalog</div>
     </router-link>
     <h1>Cart</h1>
+    <p v-if="!cart_data.length">В корзине пока нет товаров</p>
     <can-cart-item-vue
     v-for="(item, index) in cart_data"
     :key="item.name"

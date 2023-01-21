@@ -2,40 +2,24 @@
     <div class="can-main-wrapper">
         <keep-alive>
             <router-view>
-                
+
             </router-view>
         </keep-alive>
         
-        <!-- <can-catalog-vue />
-        <can-cart-vue 
-            v-if = "CART.length"
-            :cart_data="CART" -->
-        <!-- /> -->
     </div>
 </template>
 
 <script>
-// import canCatalogVue from './can-catalog.vue';
-// import canCartVue from './can-cart.vue';
-import { mapGetters } from 'vuex';
 
 export default {
-    // name: 'can-main-wrapper',
-    // components:{
-    // canCartVue,
-    // canCatalogVue
-    // },
+    
     props: {},
     data(){
         return {
             title: 'Main Wrapper'
         }
     },
-    computed: {
-        ...mapGetters([
-        'CART'])
-
-    },
+    computed: {},
     methods: {},
     watch: {},
     mounted() {
