@@ -44,6 +44,10 @@ export default {
         {
             this.$emit( 'sendName', this.product_data.name)
         } */ 
+    },
+    mounted()
+    {
+        this.$set(this.product_data, "quantity", 1)
     }
     
 }
